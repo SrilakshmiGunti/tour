@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page - Width Background Video Slider | Travel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Travel</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="videofile.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videofile2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videofile3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videofile4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videofile5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Wonderful.<br><span>Island</span></h1>
+            <p>Nothing beats a beautiful island. Whether it's the feeling of relaxing on a palm-lined 
+                beach, wading into warm crystal-clear waters, or simply gazing out to sea from 
+                an infinity pool, islands are what vacation dreams are made of.</p>
+                <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Camping.<br><span>Enjoy</span></h1>
+            <p>Camping gets you into the outdoors, active and appreciating nature. You see the stars before you go to sleep and you wake up to the sound of birds.
+                 You can spend quality time enjoying the countryside, visiting local attractions with family or friends, meeting new people
+                  and chilling around a campfire with a beer.</p>
+                <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Adventures.<br><span>trip</span></h1>
+            <p>Nothing beats a beautiful island. Whether it's the feeling of relaxing on a palm-lined 
+                beach, wading into warm crystal-clear waters, or simply gazing out to sea from 
+                an infinity pool, islands are what vacation dreams are made of.</p>
+                <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Road Trip.<br><span>Together</span></h1>
+            <p>when it comes to traveling, road trips are considered the best ones to enjoy each moment of your tour to the hilt. It lets you enjoy not 
+                just the destinations, but also the entire journey. You have the absolute control and freedom to choose
+                 your stopovers and breaks and even the next destination.</p>
+                <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Feel Nature.<br><span>Relax</span></h1>
+            <p>NBeing in nature, or even viewing scenes of nature, reduces anger, fear, and stress and increases pleasant feelings. Exposure to nature not 
+                only makes you feel better emotionally, it contributes to your 
+                physical wellbeing, reducing blood pressure, heart rate, muscle tension, and the production of stress hormones..</p>
+                <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn left_margin"></div>
+        </div>
+    </section>
+    
+    <script type = "text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation")
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+         
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+        
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+
+        btns.forEach((btn,i) => {
+            btn.addEventListener("click" , () => {
+                sliderNav(i);
+            });
+        });
+
+
+
+    </script>
+</body>
+</html> 
